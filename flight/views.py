@@ -21,3 +21,9 @@ def city_and_airport(request):
 	data={"city":cities,"airports":airports}
 
 	return render(request,"flight/cityandairport.html",data)
+
+
+def detail(request,id):
+
+	data={"id":id}
+	return render(request,"flight/details.html",data)
