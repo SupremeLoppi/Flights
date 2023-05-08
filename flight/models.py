@@ -36,7 +36,7 @@ class Jobs(models.Model):
 
 
 class Passenger(models.Model):
-	name=models.CharField(max_length=0)
+	name=models.CharField(max_length=500)
 	seatnumber=models.IntegerField()
 	key=models.ForeignKey(Flight,on_delete=models.CASCADE,related_name="person_on_flight")
 	job=models.ManyToManyField("Jobs")

@@ -1,8 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block yield %}
-<h1>Detail page {{id }}</h1>
+<h1>Flight Number {{ id }}</h1>
+<h4>Running Airports</h4>
+<p>To :{{destination}}</p>
+<p>From :{{departure}}</p>
+<h3>Pricing :{{flight.price}}</h3>
 
-<h2>{{flight}}</h2>
+<h4>Cities</h4>
+<p>From :{{departure_city}}</p>
+<p>To :{{destination_city}}</p>
 
 {% endblock %}

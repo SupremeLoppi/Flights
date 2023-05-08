@@ -24,8 +24,14 @@ def city_and_airport(request):
 
 
 def detail(request,pk):
-	city=Cities.objects.get(id=pk)
 	flight=Flight.objects.get(id=pk)
+	departure_airport=flight.departure
+	destination_airport=flight.destination
 
-	data={"id":id,"city":city,"flight":flight}
+	departure_city=Airport.objects.get(title=departure_airport).location
+	destination_city=Airport.objects.get(title=destination_airport).location
+
+
+	data={"id":pk,"flight":flight,"departure":departure_airport,"destination":destination_airport,
+		"destination_city":destination_city,"departure_city":departure_city}
 	return render(request,"flight/details.html",data)
