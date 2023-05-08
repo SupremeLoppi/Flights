@@ -2,13 +2,12 @@
 
 {% block yield %}
 <h1>These are available flights</h1>
-
+<hr>
 {% for flight in flights %}
 <h4> Departure {{flight.departure}}</h4>
 <h4> Destination {{flight.destination}}</h4>
 <h5> Price {{flight.price}}</h5>
 <a href="{% url 'detail' flight.id %}">Show details </a>
-
 <hr>
 
 

@@ -4,7 +4,7 @@ from . import views
 urlpatterns=[
 	path("",views.flightindex,name="flightindex"),
 	path("city",views.city_and_airport,name="cityindex"),
-	path("detail/<int:id>",views.detail,name="detail")
+	path("detail/<int:pk>",views.detail,name="detail")
 
 
 ]

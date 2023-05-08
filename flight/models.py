@@ -26,3 +26,20 @@ class Flight(models.Model):
 
 	def __str__(self):
 		return f"from {self.departure} to {self.destination}"
+
+class Jobs(models.Model):
+	job_name=models.CharField(max_length=50)
+
+	def __str__(self):
+		return f"{self.job_name}"
+
+
+
+class Passenger(models.Model):
+	name=models.CharField(max_length=0)
+	seatnumber=models.IntegerField()
+	key=models.ForeignKey(Flight,on_delete=models.CASCADE,related_name="person_on_flight")
+	job=models.ManyToManyField("Jobs")
+
+	def __str__(self):
+		return f"{self.name} at {self.seatnumber}"

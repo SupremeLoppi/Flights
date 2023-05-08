@@ -23,7 +23,9 @@ def city_and_airport(request):
 	return render(request,"flight/cityandairport.html",data)
 
 
-def detail(request,id):
+def detail(request,pk):
+	city=Cities.objects.get(id=pk)
+	flight=Flight.objects.get(id=pk)
 
-	data={"id":id}
+	data={"id":id,"city":city,"flight":flight}
 	return render(request,"flight/details.html",data)
