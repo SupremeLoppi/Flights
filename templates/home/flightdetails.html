@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block yield %}
+	<h2>From {{flight.departure}} to {{flight.destination}}</h2>
+	<p>Flight code :{{flight.code}}</p>
+
+	<h4>Owned By {{flight.owner}}</h4>
+	<a href="#">More about Flight Company</a>
+	<h4>Prices :{{flight.price}} $</h4>
+	<p>Duration :{{flight.duration}} Min</p>
+	<p>Capacity :{{flight.capacity}}</p>
+	<p><strong>{{flight.standard}}</strong></p>
+{% endblock %}
