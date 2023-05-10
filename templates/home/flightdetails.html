@@ -1,13 +1,19 @@
 {% extends 'layout.html' %}
 
 {% block yield %}
-	<h2>From {{flight.departure}} to {{flight.destination}}</h2>
+	<h2>From {{departure_city}} to {{destination_city}}</h2>
+
 	<p>Flight code :{{flight.code}}</p>
+	<h3>{{departure_city}}-{{flight.departure}} Airport</h3>
+	<a href="{% url 'citydetails' departure_city_id %}">Click here to know more about {{departure_city}}</a>
+	<h3>{{destination_city}}-{{flight.destination}} Airport</h3>
+	<a href="{% url 'citydetails' destination_city_id %}">Click here to know more about {{destination_city}}</a>
 
 	<h4>Owned By {{flight.owner}}</h4>
-	<a href="#">More about Flight Company</a>
-	<h4>Prices :{{flight.price}} $</h4>
+	<a href="{% url 'flightcompanies' flightcompany.id %}">More about Flight Company</a>
+	<h4>Prices :{{flight.pricing}} $</h4>
 	<p>Duration :{{flight.duration}} Min</p>
 	<p>Capacity :{{flight.capacity}}</p>
 	<p><strong>{{flight.standard}}</strong></p>
+
 {% endblock %}

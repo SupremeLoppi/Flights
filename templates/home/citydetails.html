@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block yield %}
+<div>
+<h1>{{city.name}}</h1>
+<h2>{{city.Country}}</h2>
+
+<h3>Popular Places</h3>
+
+{% for place in places%}
+	<p><strong>{{place.name}}</strong></p>
+	<p>{{place.popularity}}</p>
+
+{% empty %}
+	<p>No data available yet!!</p>
+{% endfor %}
+</div>
+
+
+
+
+{% endblock %}

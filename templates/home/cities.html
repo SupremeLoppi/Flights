@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block yield %}
+<h1>Cities Available</h1>
+
+{% for city in cities %}
+	<a href="{% url 'citydetails' city.id %}" style="text-decoration: none;color: black;"><h3>{{city.Country}} - {{city.name}}</h3></a>
+
+	<hr>
+{% endfor %}
+
+{% endblock %}
