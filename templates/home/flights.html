@@ -1,15 +1,25 @@
 {% extends 'layout.html' %}
 
 {% block yield %}
-<h1>Available Flights</h1>
-{% for flight in flights %}
+	<div class="flights-title">
+		<h2>Available Flights</h2>
+	</div>
 
-	<p>From : {{flight.departure}}</p>
-	<p>To :{{flight.destination}}</p>
-	<p>{{flight.standard}}</p>
-	<p>{{flight.id}}</p>
-	<a href="{% url 'flightdetails' flight.id %}">See more detail</a>
-<p>---------</p>
-{% endfor %}
+<div class="flights-container">
+	{% for flight in flights %}
+	  <div class="flights-item card">
+		<div class="flights">
+			<p>From : {{flight.departure}}</p>
+			<p>To :{{flight.destination}}</p>
+			<p>{{flight.standard}}</p>
+		</div>
 
+		<div class="detail-btn">
+			<button>
+				<a href="{% url 'flightdetails' flight.id %}">See more detail</a>
+			</button>
+		</div>
+	  </div>
+	{% endfor %}
+</div>
 {% endblock %}

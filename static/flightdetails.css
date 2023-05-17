@@ -1,0 +1,74 @@
+.detail-container {
+    background-color:  rgba(231, 230, 230, 0.753);
+    height: 100vh;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-box {
+    height: 90%;
+    width: 70%;
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.more-details {
+    height: 95%;
+    width: 95%;
+    font-size: 20px;
+}
+
+.more-details a {
+    text-decoration: none;
+    color: rgb(255, 208, 0);
+}
+
+.details-title {
+    height: 25%;
+    font-size: 30px;
+    color: rgb(255, 208, 0);
+    text-align: center;
+}
+
+.details-title p {
+    color: white;
+}
+
+.details-city {
+    height: 45%;
+    padding-left:50px;
+}
+
+.upcity {
+    height: 35%;
+}
+
+.downcity {
+    height: 35%;
+}
+
+.company {
+    height: 30%;
+}
+
+.price-section {
+    height: 30%;
+    width: 97%;
+    display: flex;
+    justify-content: end;
+    text-align: start;
+}
+
+.price {
+    line-height: 30px;
+}
+
+.price span {
+    color: gold;
+}

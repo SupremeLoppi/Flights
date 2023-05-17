@@ -1,19 +1,45 @@
 {% extends 'layout.html' %}
 
 {% block yield %}
-	<h2>From {{departure_city}} to {{destination_city}}</h2>
 
-	<p>Flight code :{{flight.code}}</p>
-	<h3>{{departure_city}}-{{flight.departure}} Airport</h3>
-	<a href="{% url 'citydetails' departure_city_id %}">Click here to know more about {{departure_city}}</a>
-	<h3>{{destination_city}}-{{flight.destination}} Airport</h3>
-	<a href="{% url 'citydetails' destination_city_id %}">Click here to know more about {{destination_city}}</a>
+<div class="detail-container">
+	<div class="detail-box">
+		<div class="more-details">
+			<div class="details-title">
+				<h2>From {{departure_city}} to {{destination_city}}</h2>
+				<p>Flight code :{{flight.code}}</p>
+			</div>
 
-	<h4>Owned By {{flight.owner}}</h4>
-	<a href="{% url 'flightcompanies' flightcompany.id %}">More about Flight Company</a>
-	<h4>Prices :{{flight.pricing}} $</h4>
-	<p>Duration :{{flight.duration}} Min</p>
-	<p>Capacity :{{flight.capacity}}</p>
-	<p><strong>{{flight.standard}}</strong></p>
+			<div class="details-city">
+				<div class="upcity">
+					<h3>{{departure_city}}-{{flight.departure}} Airport</h3>
+					<a href="{% url 'citydetails' departure_city_id %}">Click here to know more about {{departure_city}}</a>
+				</div>
+
+				<div class="downcity">
+					<h3>{{destination_city}}-{{flight.destination}} Airport</h3>
+					<a href="{% url 'citydetails' destination_city_id %}">Click here to know more about {{destination_city}}</a>
+				</div>
+
+				<div class="company">
+					<h4>Owned By {{flight.owner}}</h4>
+					<a href="{% url 'flightcompanies' flightcompany.id %}">More about Flight Company</a>
+			</div>
+
+				</div>
+
+            <div class="price-section">
+				<div class="price">
+					<p>Prices <span>  :{{flight.pricing}} $</span> </p>
+					<p>Duration <span> :{{flight.duration}} Min</span> </p>
+					<p>Capacity <span> :{{flight.capacity}} </span></p>
+					<span><strong>{{flight.standard}}</strong></span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
 
 {% endblock %}
